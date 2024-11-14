@@ -54,3 +54,6 @@ class YOLOTracker:
                 tracker=tracker_path,
                 classes=classes,
             )
+
+
+print(dir(YOLOTracker))

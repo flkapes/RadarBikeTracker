@@ -13,7 +13,11 @@ from transformers import pipeline
 class DepthProcessing:
     """This class manages the use of Depth-Anything-V2 model."""
 
-    def __init__(self, encoder: str, input_video_path: str, input_size: int = 518):
+    def __init__(
+            self,
+            encoder: str,
+            input_video_path: str,
+            input_size: int = 518):
         self.config = self._get_config(encoder)
         self.input_size = input_size
         self.input_video_path = input_video_path
@@ -65,7 +69,7 @@ class DepthProcessing:
 
     def get_average_depth(
         self, depth_map: np.ndarray, bbox: np.ndarray
-    ) -> Optional[np.ndarray]:
+    ) -> Optional[float]:
         """Uses bounding box coordinates to calculate the average depth of an object
 
         Parameters
